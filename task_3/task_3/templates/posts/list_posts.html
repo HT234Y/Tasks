@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Список постов{% endblock %}
+
+{% block content %}
+	
+	{% if list_posts %}
+
+		{% for i in list_posts %}
+			<a href="{% url 'posts:detail' i.id %}">{{i.post_title}}</a>
+		{% endfor %}
+
+	{% else %}
+		Здесь пока нет статей
+	{% endif %}
+
+
+{% endblock %}
